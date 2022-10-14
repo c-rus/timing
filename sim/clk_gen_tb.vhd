@@ -1,10 +1,15 @@
 --------------------------------------------------------------------------------
---! Entity: clk_gen_tb
---! Adapted from: Dr. Stitt, UF ECE Professor
+--! Project  : eel4712c.lab4
+--! Engineer : Dr. Stitt, UF ECE Professor
+--! Course   : Digital Design - EEL4712C
+--! Entity   : clk_gen_tb
+--! Details  :
+--!     Tests the timing for `clk_gen` entity.
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+library work;
 
 entity clk_gen_tb is
 generic (

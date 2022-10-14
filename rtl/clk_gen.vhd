@@ -1,12 +1,12 @@
 --------------------------------------------------------------------------------
--- Project: eel4712c.lab4
--- Author: Chase Ruskin
--- Course: Digital Design - EEL4712C
--- Creation Date: October 05, 2021
--- Entity: clk_gen
--- Description:
---  Generates a pulse (rising edge) every 1 second when a button has been pressed for
---  1 second.
+--! Project  : eel4712c.lab4
+--! Engineer : Chase Ruskin
+--! Course   : Digital Design - EEL4712C
+--! Created  : October 05, 2021
+--! Entity   : clk_gen
+--! Details  :
+--!     Generates a pulse (rising edge) every 1 second when `en` is asserted for
+--!     `PERIOD` pulses divided by `CLK_IN_FREQ`/`CLK_OUT_FREQ`.
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
