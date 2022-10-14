@@ -12,12 +12,14 @@ generic (
 );
 end entity clk_gen_tb;
 
+
 architecture sim of clk_gen_tb is
     
-    signal clk : std_logic := '0';
+    signal clk      : std_logic := '0';
     signal rst      : std_logic;
     signal button_n : std_logic;
     signal clk_out  : std_logic;
+    signal en       : std_logic;
 
     signal halt     : std_logic := '0';
 
@@ -25,18 +27,24 @@ architecture sim of clk_gen_tb is
     constant MAX_TIME  : time    := (MS_PERIOD+1)*1 ms;
     -- the generated clock should never occure before `MIN_TIME` after enabled
     constant MIN_TIME  : time    := (MS_PERIOD)*1 ms;
-
+    -- 50 MHz clock period
     constant CLK_PERIOD : time := 20 ns;
 
 begin
+    en <= not button_n;
+
     uut : entity work.clk_gen
-        generic map (
-            ms_period => MS_PERIOD)
-        port map (
-            clk50MHz => clk,
-            rst      => rst,
-            button_n => button_n,
-            clk_out  => clk_out);
+    generic map (
+        CLK_IN_FREQ  => 50_000_000,
+        -- divide to get 1kHz clock
+        CLK_OUT_FREQ => 1_000, 
+        PERIOD       => MS_PERIOD
+    ) port map (
+        clk_src => clk,
+        rst     => rst,
+        en      => en,
+        clk_tgt => clk_out
+    );
 
     clk <= not clk after CLK_PERIOD/2 when halt = '0';
 
