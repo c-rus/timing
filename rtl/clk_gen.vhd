@@ -5,8 +5,8 @@
 --! Created  : October 05, 2021
 --! Entity   : clk_gen
 --! Details  :
---!     Generates a pulse (rising edge) every 1 second when `en` is asserted for
---!     `PERIOD` pulses divided by `CLK_IN_FREQ`/`CLK_OUT_FREQ`.
+--!     Generates a pulse (rising edge) when `en` is asserted for `PERIOD` 
+--!     pulses divided by `CLK_IN_FREQ`/`CLK_OUT_FREQ`.
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
