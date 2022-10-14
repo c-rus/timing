@@ -3,4 +3,5 @@
 
 [[ip]]
 name = "crus.chrono.timing"
-version = "0.1.0"
+version = "1.0.0"
+source = "https://github.com/c-rus/timing"

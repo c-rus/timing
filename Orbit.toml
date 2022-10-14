@@ -1,7 +1,7 @@
 [ip]
 name    = "timing"
 library = "chrono"
-version = "0.1.0"
+version = "1.0.0"
 vendor  = "crus"
 summary = "modules for varying internal clock speeds"
 repository = "https://github.com/c-rus/timing"
