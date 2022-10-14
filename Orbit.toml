@@ -4,6 +4,7 @@ library = "chrono"
 version = "0.1.0"
 vendor  = "crus"
 summary = "modules for varying internal clock speeds"
+repository = "https://github.com/c-rus/timing"
 
 # To learn more about writing the manifest, see https://c-rus.github.io/orbit/4_topic/2_orbittoml.html
 
